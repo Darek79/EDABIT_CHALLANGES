@@ -1,5 +1,5 @@
 /**----------------------
- **      ALGORITHMS-JS
+ **      BINARY SEARCH
  *------------------------**/
 var primes = [
   2,
@@ -44,4 +44,42 @@ function isPrime(primes, num) {
   return "no";
 }
 
-console.log(isPrime(primes, 5));
+//console.log(isPrime(primes, 5));
+
+/**----------------------
+ **      FIZZ BUZZ
+ *------------------------**/
+
+function fizzBuzz(num) {
+  let r = 1;
+  while (r <= num) {
+    if (r % 3 === 0 && r % 5 === 0) {
+      console.log("FizzBuzz", r);
+    } else if (r % 3 === 0) {
+      console.log("Fizz", r);
+    } else if (r % 5 === 0) {
+      console.log("Buzz", r);
+    }
+    r++;
+  }
+}
+
+// console.log(fizzBuzz(20));
+/**----------------------
+ **      HARMLESS RANSOM NOTE
+ *------------------------**/
+
+function harmlessRansomNote(note, text) {
+  let arr = text.split(" ");
+  let r = true;
+  note.split(" ").forEach((el) => {
+    if (arr.includes(el)) {
+      let temp = arr.indexOf(el);
+      arr.splice(temp, 1);
+    } else {
+      return (r = false);
+    }
+  });
+  return r;
+}
+harmlessRansomNote("aa aa", "aab aa");
