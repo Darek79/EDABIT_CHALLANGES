@@ -69,17 +69,95 @@ function fizzBuzz(num) {
  **      HARMLESS RANSOM NOTE
  *------------------------**/
 
-function harmlessRansomNote(note, text) {
-  let arr = text.split(" ");
-  let r = true;
-  note.split(" ").forEach((el) => {
-    if (arr.includes(el)) {
-      let temp = arr.indexOf(el);
-      arr.splice(temp, 1);
+// function harmlessRansomNote(note, text) {
+//   let arr = text.split(" ");
+//   let r = true;
+//   note.split(" ").forEach((el) => {
+//     if (arr.includes(el)) {
+//       let temp = arr.indexOf(el);
+//       arr.splice(temp, 1);
+//     } else {
+//       return (r = false);
+//     }
+//   });
+//   return r;
+// }
+// harmlessRansomNote("aa aa", "aab aa");
+
+/**----------------------
+ **      IS PALINDROME
+ *------------------------**/
+
+// function isPalindrome(str) {
+//   let strO = str
+//     .trim()
+//     .toLowerCase()
+//     .replace(/[^\w\s]/gi, "")
+//     .replace(/ /g, "");
+//   let strR = str
+//     .trim()
+//     .toLowerCase()
+//     .replace(/[^\w\s]/gi, "")
+//     .replace(/ /g, "")
+//     .split("")
+//     .reverse()
+//     .join("");
+//   console.log(strR);
+//   return strO === strR;
+// }
+
+// console.log(
+//   isPalindrome("Eva, can I see bees in a cave?")
+// );
+
+/**======================
+ **      CEASER CIPHER
+ *========================**/
+
+const alphabet = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+function ceaserCipher(str, num) {
+  let alpL = alphabet.length - 1;
+  return str.split("").map((el) => {
+    let temp = alphabet.indexOf(el);
+    if (temp <= alpL && temp + num < alpL) {
+      return alphabet[temp + num];
     } else {
-      return (r = false);
+      let temp1 = Math.abs(alpL - temp - num);
+      if (temp1 === 0) {
+        return alphabet[alphabet.length - 1];
+      }
+      return alphabet[temp1 - 1];
     }
+    console.log(temp);
   });
-  return r;
 }
-harmlessRansomNote("aa aa", "aab aa");
+
+console.log(ceaserCipher("bigcar", 16));
