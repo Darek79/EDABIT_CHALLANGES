@@ -1,48 +1,48 @@
 /**----------------------
  **      BINARY SEARCH
  *------------------------**/
-var primes = [
-  2,
-  3,
-  5,
-  7,
-  11,
-  13,
-  17,
-  19,
-  23,
-  29,
-  31,
-  37,
-  41,
-  43,
-  47,
-  53,
-  59,
-  61,
-  67,
-  71,
-  73,
-  79,
-  83,
-  89,
-  97,
-];
-function isPrime(primes, num) {
-  let left = 0;
-  let right = primes.length - 1;
-  while (left <= right) {
-    let middle = Math.floor((left + right) / 2);
-    console.log(middle, primes[middle]);
-    if (num === primes[middle]) {
-      return "yes";
-    }
-    num > primes[middle]
-      ? (left = middle + 1)
-      : (right = middle - 1);
-  }
-  return "no";
-}
+// var primes = [
+//   2,
+//   3,
+//   5,
+//   7,
+//   11,
+//   13,
+//   17,
+//   19,
+//   23,
+//   29,
+//   31,
+//   37,
+//   41,
+//   43,
+//   47,
+//   53,
+//   59,
+//   61,
+//   67,
+//   71,
+//   73,
+//   79,
+//   83,
+//   89,
+//   97,
+// ];
+// function isPrime(primes, absNum) {
+//   let left = 0;
+//   let right = primes.length - 1;
+//   while (left <= right) {
+//     let middle = Math.floor((left + right) / 2);
+//     console.log(middle, primes[middle]);
+//     if (absNum === primes[middle]) {
+//       return "yes";
+//     }
+//     absNum > primes[middle]
+//       ? (left = middle + 1)
+//       : (right = middle - 1);
+//   }
+//   return "no";
+// }
 
 //console.log(isPrime(primes, 5));
 
@@ -50,19 +50,19 @@ function isPrime(primes, num) {
  **      FIZZ BUZZ
  *------------------------**/
 
-function fizzBuzz(num) {
-  let r = 1;
-  while (r <= num) {
-    if (r % 3 === 0 && r % 5 === 0) {
-      console.log("FizzBuzz", r);
-    } else if (r % 3 === 0) {
-      console.log("Fizz", r);
-    } else if (r % 5 === 0) {
-      console.log("Buzz", r);
-    }
-    r++;
-  }
-}
+// function fizzBuzz(absNum) {
+//   let r = 1;
+//   while (r <= absNum) {
+//     if (r % 3 === 0 && r % 5 === 0) {
+//       console.log("FizzBuzz", r);
+//     } else if (r % 3 === 0) {
+//       console.log("Fizz", r);
+//     } else if (r % 5 === 0) {
+//       console.log("Buzz", r);
+//     }
+//     r++;
+//   }
+// }
 
 // console.log(fizzBuzz(20));
 /**----------------------
@@ -114,7 +114,7 @@ function fizzBuzz(num) {
  **      CEASER CIPHER
  *========================**/
 
-const alphabet = [
+const alp = [
   "a",
   "b",
   "c",
@@ -143,21 +143,46 @@ const alphabet = [
   "z",
 ];
 
-function ceaserCipher(str, num) {
-  let alpL = alphabet.length - 1;
-  return str.split("").map((el) => {
-    let temp = alphabet.indexOf(el);
-    if (temp <= alpL && temp + num < alpL) {
-      return alphabet[temp + num];
-    } else {
-      let temp1 = Math.abs(alpL - temp - num);
-      if (temp1 === 0) {
-        return alphabet[alphabet.length - 1];
-      }
-      return alphabet[temp1 - 1];
-    }
-    console.log(temp);
-  });
-}
+// function ceaserCipher(str, num) {
+//   const absNum = Math.abs(num);
+//   let alpL = alp.length - 1;
+//   return str
+//     .toLowerCase()
+//     .split("")
+//     .map((el) => {
+//       let temp = alp.indexOf(el);
+//       if (temp <= alpL && temp + absNum < alpL) {
+//         return alp[temp + absNum];
+//       } else {
+//         let temp1 = Math.abs(
+//           alpL - temp - absNum
+//         );
+//         if (temp1 === 0) {
+//           return alp[alp.length - 1];
+//         }
+//         return alp[temp1 - 1];
+//       }
+//       console.log(temp);
+//     });
+// }
+// console.log(alp.length - 13);
+// function ceaserCipher(str, num) {
+//   return str
+//     .toLowerCase()
+//     .replace(/ /gi, "")
+//     .split("")
+//     .map((el) => {
+//       let temp = alp.indexOf(el);
+//       let move = temp + (num % 26);
+//       console.log(move);
+//       if (move > 0 && move < alp.length) {
+//         return alp[move];
+//       } else if (move >= alp.length) {
+//         return alp[move - alp.length];
+//       } else if (move < 0) {
+//         return alp[alp.length - Math.abs(move)];
+//       }
+//     });
+// }
 
-console.log(ceaserCipher("bigcar", 16));
+// console.log(ceaserCipher("bigcar", -16));
