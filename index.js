@@ -28,6 +28,25 @@
 //   89,
 //   97,
 // ];
+
+// function binarySearcch(primes, num) {
+//   let left = 0;
+//   let right = primes.length - 1;
+
+//   while (left <= right) {
+//     let middle = Math.floor((left + right) / 2);
+//     if (primes[middle] === num) {
+//       return true;
+//     }
+//     if (num > primes[middle]) {
+//       left = middle + 1;
+//     } else if (num < primes[middle]) {
+//       right = middle - 1;
+//     }
+//   }
+//   return false;
+// }
+// console.log(binarySearcch(primes, 3));
 // function isPrime(primes, absNum) {
 //   let left = 0;
 //   let right = primes.length - 1;
@@ -165,7 +184,7 @@ const alp = [
 //       console.log(temp);
 //     });
 // }
-// console.log(alp.length - 13);
+
 // function ceaserCipher(str, num) {
 //   return str
 //     .toLowerCase()
@@ -185,4 +204,100 @@ const alp = [
 //     });
 // }
 
-// console.log(ceaserCipher("bigcar", -16));
+// console.log(ceaserCipher("javascript", -900));
+
+/**======================
+ **      REVERSE WORDS
+ *========================**/
+
+// const w = "this is a string of words";
+
+// function reverseWords(str) {
+//   return str
+//     .split(" ")
+//     .map((el) => {
+//       return el.split("").reverse().join(' ');
+//     })
+//     .join(",")
+//     .replace(/ /g, "");
+// }
+// console.log(reverseWords("Coding Javascript"));
+
+/**======================
+ **      REVERSE ARRAY
+ *========================**/
+
+function reverseFunction(arr) {
+  let n = arr.length - 1;
+  while (n >= 0) {
+    let temp = arr.pop();
+    arr.splice(arr.length - n, 0, temp);
+    n--;
+  }
+  return arr;
+}
+
+console.log(
+  reverseFunction(["d", "a", "r", "e", "k"])
+);
+
+/**======================
+ **      EDABIT
+ *========================**/
+
+ // function isPositiveDominant(a) {
+//   let pos = [];
+//   let neg = [];
+//   [...new Set(a)].forEach((el) => {
+//     if (el > 0) {
+//       pos.push(el);
+//     } else if (el < 0) {
+//       neg.push(el);
+//     }
+//   });
+//   return pos.length > neg.length;
+//   console.log(pos, neg);
+// }
+// console.log(isPositiveDominant([1, 0, 0, -1]));
+// // function numInStr(arr) {
+//   return arr.filter((el) => {
+//     if (el.match(/[0-9]/g)) {
+//       return el;
+//     }
+//   });
+// }
+// console.log(numInStr(["1a", "a", "2b", "b"]));
+// function oddishOrEvenish(num) {
+//   let n = num
+//     .toString()
+//     .split("")
+//     .reduce((acc, val) => acc + val * 1, 0);
+//   console.log(n);
+//   return n % 2 === 0 ? "Evenish" : "Oddish";
+// }
+
+// console.log(oddishOrEvenish(43));
+// function areaOfCountry(name, area) {
+//   return `${name} is ${(
+//     parseFloat(area / 148940000) * 100
+//   ).toFixed(2)}% of the total world's landmass`;
+// }
+// console.log(areaOfCountry("Russia", 17098242));
+// function numberSquares(n) {
+//   let res = 0;
+//   while (n > 0) {
+//     res += n * n;
+//     n--;
+//   }
+//   return res
+// }
+// console.log(numberSquares(5));
+// function findNthElement(a, n) {
+//   return a[n - 1];
+// }
+
+// console.log(findNthElement([3, 4, 6, 2], 3));
+// console.log(
+//   findNthElement([0, 0, 9, 6, 3, 8, 7, 2], 5)
+// );
+
