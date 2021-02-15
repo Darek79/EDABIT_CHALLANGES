@@ -227,25 +227,133 @@ const alp = [
  **      REVERSE ARRAY
  *========================**/
 
-function reverseFunction(arr) {
-  let n = arr.length - 1;
-  while (n >= 0) {
-    let temp = arr.pop();
-    arr.splice(arr.length - n, 0, temp);
-    n--;
+// function reverseFunction(arr) {
+//   let n = arr.length - 1;
+//   while (n >= 0) {
+//     let temp = arr.pop();
+//     arr.splice(arr.length - n, 0, temp);
+//     n--;
+//   }
+//   return arr;
+// }
+
+// console.log(
+//   reverseFunction(["d", "a", "r", "e", "k"])
+// );
+
+/**======================
+ **      TWO SUM
+ *========================**/
+
+// const twoSum = (arr, sum) => {
+//   let res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[i] + arr[j] === sum) {
+//         res.push([arr[i], arr[j]]);
+//       }
+//     }
+//   }
+//   return res;
+// };
+// console.log(twoSum([1, 6, 4, 5, 3, 3], 7));
+
+/**======================
+ **      FIBONACI
+ *========================**/
+
+// const fibo = (n) => {
+//   let a = 0;
+//   let b = 1;
+//   let f = 1;
+//   let i = 2;
+//   let res = 0;
+//   while (i <= n) {
+//     f = a + b;
+//     a = b;
+//     b = f;
+//     i++;
+//   }
+//   return f;
+// };
+
+// console.log(fibonacci(9));
+
+// const fibo = (n) => {
+//   let f = 1;
+//   let a = 0;
+//   let b = 1;
+
+//   while (n > 1) {
+//     f = a + b;
+//     a = b;
+//     b = f;
+//     n--;
+//   }
+//   return f;
+// };
+// console.log(fibo(9));
+
+/**======================
+ **      Sieve of Eratosthenes
+ *========================**/
+
+// const sieve = (n) => {
+//   const arr = [...new Array(n + 1)].map((el, i) => i);
+
+//   for (let i = 2; i <= arr.length; i++) {
+//     if (i !== 2 && i % 2 === 0) {
+//       arr.splice(i, 1, 0);
+//     }
+//     if (i % 3 === 0 && i !== 3) {
+//       arr.splice(i, 1, 0);
+//     }
+//     if (i % 5 === 0 && i / 5 > 1) {
+//       arr.splice(i, 1, 0);
+//     }
+//   }
+//   console.log(arr);
+
+//   return [...new Set(arr)].slice(2);
+// };
+// console.log(sieve(30));
+
+var eratosthenes = function (n) {
+  // Eratosthenes algorithm to find all primes under n
+  var array = [],
+    upperLimit = Math.sqrt(n),
+    output = [];
+
+  // Make an array from 2 to (n - 1)
+  for (var i = 0; i < n; i++) {
+    array.push(true);
   }
-  return arr;
-}
 
-console.log(
-  reverseFunction(["d", "a", "r", "e", "k"])
-);
+  // Remove multiples of primes starting from 2, 3, 5,...
+  for (var i = 2; i <= upperLimit; i++) {
+    if (array[i]) {
+      for (var j = i * i; j < n; j += i) {
+        array[j] = false;
+      }
+    }
+  }
 
+  // All array[i] set to true are primes
+  for (var i = 2; i < n; i++) {
+    if (array[i]) {
+      output.push(i);
+    }
+  }
+
+  return output;
+};
+
+console.log(eratosthenes(30));
 /**======================
  **      EDABIT
  *========================**/
 
- // function isPositiveDominant(a) {
+// function isPositiveDominant(a) {
 //   let pos = [];
 //   let neg = [];
 //   [...new Set(a)].forEach((el) => {
@@ -300,4 +408,3 @@ console.log(
 // console.log(
 //   findNthElement([0, 0, 9, 6, 3, 8, 7, 2], 5)
 // );
-
