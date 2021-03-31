@@ -408,3 +408,42 @@ console.log(eratosthenes(30));
 // console.log(
 //   findNthElement([0, 0, 9, 6, 3, 8, 7, 2], 5)
 // );
+
+
+function isObject(value) {
+  return value instanceof Object;
+}
+console.log(isObject(new RegExp('^[a-zA-Z0-9]+$', 'g')));
+
+console.log(value===Object(value))
+// function checker(st1, st2) {
+//   const arr1 = st1.split("");
+//   const arr2 = st2.split("");
+//   const res = [];
+//   arr1.forEach((el, i) => {
+//     arr2.forEach((el1, i) => {
+//       if (el === el1 && !res.includes(el)) {
+//         res.push(el1);
+//       }
+//     });
+//   });
+
+//   console.log(res);
+// }
+// console.log(checker("abba", "abcaba"));
+// function equal(a, b, c) {
+//   let myset = Array.from(new Set([...arguments])).length;
+//   if(myset ===2){
+//     return myset;
+//   }
+//   return myset===3?0:3
+// }
+
+// console.log(equal(1,1,1));
+// function mean(num) {
+//   const arr = new String(num).split("");
+//   return (
+//     arr.reduce((a, b, i, ar) => a * 1 + b * 1) /
+//     arr.length
+//   );
+// }
