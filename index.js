@@ -447,3 +447,99 @@ console.log(value===Object(value))
 //     arr.length
 //   );
 // }
+
+// function reorderDigits(arr, sortTo) {
+//   return arr.map((el) => {
+//     if (sortTo === "desc") {
+//       return (
+//         el
+//           .toString()
+//           .split("")
+//           .sort((a, b) => a - b)
+//           .reverse()
+//           .join("") * 1
+//       );
+//     } else {
+//       return (
+//         el
+//           .toString()
+//           .split("")
+//           .sort((a, b) => a - b)
+//           .join("") * 1
+//       );
+//     }
+//   });
+// }
+// console.log(
+//   reorderDigits([515, 341, 98, 44, 211], "desc")
+// );
+
+// function canConcatenate(arr, target) {
+//   return (
+//     arr
+//       .flat()
+//       .sort((a, b) => a - b)
+//       .join("") ===
+//     target.sort((a, b) => a - b).join("")
+//   );
+// }
+// console.log(
+//   canConcatenate(
+//     [[1, 2, 3, 4], [5, 6], [7]],
+//     [1, 2, 3, 4, 5, 6, 7]
+//   )
+// );
+// function uniqueSort(arr) {
+//   return Array.from(new Set([...arr])).sort(
+//     (a, b) => a - b
+//   );
+// }
+
+// console.log(
+//   uniqueSort([1, 4, 4, 4, 4, 4, 3, 2, 1, 2])
+// );
+
+// function sortIt(arr) {
+//   return arr.sort();
+// }
+
+// console.log(sortIt([[3], 4, [2], [5], 1, 6]));
+// var arr1 = [
+//   3,
+//   "a",
+//   "a",
+//   "a",
+//   2,
+//   3,
+//   "a",
+//   3,
+//   "a",
+//   2,
+//   4,
+//   9,
+//   3,
+// ];
+
+// function most(arr) {
+//   arr.sort();
+//   let temp = [];
+//   let result = [];
+//   let count = 0;
+
+//   arr.forEach((el, i) => {
+//     if (!temp.includes(el)) {
+//       temp = arr.filter((item) => item === el);
+//       if (temp.length > count) {
+//         count = temp.length;
+//         result = [...temp];
+//       }
+//     }
+//   });
+
+//   return result;
+// }
+// console.log(most(arr1));
+
+// function is_array(arr) {
+//   return Array.isArray(arr);
+// }
